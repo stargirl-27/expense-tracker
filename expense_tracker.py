@@ -41,10 +41,10 @@ elif menu == "View Expenses":
 elif menu == "Summary":
   st.subheader("Expense Summary")
   df = pd.read_csv(FILE)
-    if not df.empty:
+  if not df.empty:
       category_sum = df.groupby("Category")[ "Amount" ].sum()
       fig, ax = plt.subplots()
       category_sum.plot( kind="bar", ax=ax )
       st.pyplot(fig)
-    else:
+  else:
       st.warning("No Data Available")
