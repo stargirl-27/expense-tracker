@@ -1,6 +1,5 @@
 import streamlit as st
-st.set_page_config
-(
+st.set_page_config(
  page_title="Expense Buddy",
  page_icon="icon.png",
  layout="wide"
@@ -16,7 +15,7 @@ if not os.path.exists(FILE):
  df = pd.DataFrame( columns=["Date", "Category", "Amount", "Description"] )
  df.to_csv(FILE, index=False)
 
-st.title("💰 Smart Expense Tracker")
+st.title("💼 Expense Buddy")
 
 menu = st.sidebar.selectbox ( "Menu",["Add Expense", "View Expenses", "Summary"])
 
